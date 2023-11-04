@@ -1,0 +1,10 @@
+#sidebar a.active {
+    color: #44ff6d;
+    border-top: 2px solid #44ff6d ;
+
+  }
+  
+  #sidebar a:hover {
+    color: #35d15c;
+  }
+  
