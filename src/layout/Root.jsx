@@ -4,11 +4,10 @@ import Navbar from "../components/Navbar/Navbar"
 
 function Root() {
     return (
-        <>
+        <div>
             <Navbar />
             <Outlet />
-        
-        </>
+        </div>
     )
 }
 

@@ -1,8 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
 import "./navbar.styles.css";
 
 function Navbar() {
+  const { user, logout } = useContext(AuthContext);
 
+  const handleLogout = () => {
+    logout();
+  };
 
   const links = (
     <nav id="sidebar" className="flex flex-col uppercase lg:flex-row lg:gap-10 gap-2">
@@ -41,7 +47,7 @@ function Navbar() {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 text-slate-900 rounded-box w-52"
             >
               {links}
             </ul>
@@ -57,39 +63,39 @@ function Navbar() {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-
+          {user ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src alt="userphoto" />
+                  <img src={user?.photoURL} alt="userphoto" />
                 </div>
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 text-slate-900 rounded-box w-52"
               >
                 <li>
-                  <a className="justify-between"></a>
+                  <a className="justify-between">{user?.displayName}</a>
                 </li>
 
                 <li>
-                  <a>Logout</a>
+                  <a onClick={handleLogout}>Logout</a>
                 </li>
               </ul>
             </div>
-
+          ) : (
             <div className=" md:w-1/2 flex gap-5 items-center">
-              <NavLink className="hover:text-blue-600 text-sm md:text-base" to="/login">
+              <NavLink className="hover:text-blue-600" to="/login">
                 Log in
               </NavLink>
               <NavLink
-                className=" bg-zinc-200 px-4 py-2 text-sm md:text-base text-zinc-800 hover:bg-zinc-500 hover:text-slate-200"
+                className=" bg-zinc-800 px-4 py-2 text-white hover:bg-zinc-500 hover:text-slate-200"
                 to="/signup"
               >
                 Sign up
               </NavLink>
             </div>
-
+          )}
         </div>
       </div>
     </div>
