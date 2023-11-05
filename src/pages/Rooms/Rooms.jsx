@@ -1,4 +1,3 @@
-import PaginatedItems from "../../components/Pagination/Pagination";
 import useRooms from "../../hooks/useRooms";
 import RoomsCard from "./RoomsCard";
 
@@ -28,7 +27,6 @@ function Rooms() {
                 type="range"
                 min={0}
                 max="100"
-                value="40"
                 className="range range-accent range-xs"
               />
             </div>
@@ -37,7 +35,6 @@ function Rooms() {
             </button>
           </div>
         </div>
-        <PaginatedItems />
       </div>
     </>
   );
