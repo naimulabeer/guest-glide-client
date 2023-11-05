@@ -59,7 +59,7 @@ function About() {
             your getaway. GuestGlide also goes the extra mile in helping you
             plan your beach vacation. We provide valuable travel guides, insider
             tips, and local recommendations, ensuring that you make the most of
-            your beach paradise experience. Whether it's discovering hidden
+            your beach paradise experience. Whether it is discovering hidden
             beaches, indulging in fresh seafood, or trying water sports, our
             website has it all.
           </p>
