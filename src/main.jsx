@@ -1,13 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import AuthProvider from './contexts/AuthProvider.jsx';
-import App from './App.jsx';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import AuthProvider from "./contexts/AuthProvider.jsx";
+import App from "./App.jsx";
+import "./index.css";
+import { ParallaxProvider } from "react-scroll-parallax";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <ParallaxProvider>
+        <App />
+      </ParallaxProvider>
     </AuthProvider>
   </React.StrictMode>
 );
