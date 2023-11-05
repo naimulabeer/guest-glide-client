@@ -11,7 +11,10 @@ function Navbar() {
   };
 
   const links = (
-    <nav id="sidebar" className="flex flex-col uppercase lg:flex-row lg:gap-10 gap-2">
+    <nav
+      id="sidebar"
+      className="flex flex-col uppercase lg:flex-row lg:gap-10 gap-2"
+    >
       <NavLink to="/">Home</NavLink>
 
       <NavLink to="/rooms">Rooms</NavLink>
@@ -25,7 +28,7 @@ function Navbar() {
   );
 
   return (
-    <div className=" md:font-bold sticky top-0 ">
+    <div className=" md:font-bold sticky top-0 z-10">
       <div className="navbar bg-slate-900 text-slate-100 px-4 py-2">
         <div className="navbar-start">
           <div className="dropdown">
