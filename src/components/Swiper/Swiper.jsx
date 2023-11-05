@@ -1,5 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Thumbs,
+} from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -8,25 +16,33 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/thumbs";
+import "./styles.css";
 
-const SwiperImage = () => {
+const SwiperImage = ({ images }) => {
   return (
-    <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-    </Swiper>
+    <>
+      <Swiper
+        // install Swiper modules
+        modules={[Navigation, Pagination, Scrollbar, A11y, Thumbs]}
+        spaceBetween={10}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => {}}
+        onSlideChange={() => {}}
+      >
+        <SwiperSlide>
+          <img src={images[0]} alt="image" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={images[1]} alt="image" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={images[2]} alt="image" />
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 };
 
