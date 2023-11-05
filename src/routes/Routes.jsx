@@ -7,16 +7,19 @@ import About from "../pages/About/About";
 import Faq from "../pages/FAQ/Faq";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
+import Error from "../pages/Error/Error";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
+        errorElement: <Error />,
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
+                errorElement: <Error />,
             },
             {
                 path: '/rooms',

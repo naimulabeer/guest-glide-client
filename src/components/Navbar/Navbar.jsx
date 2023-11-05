@@ -89,7 +89,7 @@ function Navbar() {
                 Log in
               </NavLink>
               <NavLink
-                className=" bg-zinc-800 px-4 py-2 text-white hover:bg-zinc-500 hover:text-slate-200"
+                className=" bg-zinc-200 px-4 py-2 text-black hover:bg-zinc-500 hover:text-slate-900"
                 to="/signup"
               >
                 Sign up
