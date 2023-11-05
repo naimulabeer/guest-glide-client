@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Deluxe Single Room",
+    "images": [
+      "https://i.ibb.co/Qcx5qzP/room1-1.jpg",
+      "https://i.ibb.co/XJT0G0K/room1-2.jpg",
+      "https://i.ibb.co/PCdTvWQ/room1-3.jpg"
+    ],
+    "price_per_night": 100,
+    "room_size": "1 King Bed",
+    "room_description": "Our Deluxe Single Room offers a spacious and comfortable retreat for solo travelers. The room is elegantly furnished with a luxurious king-size bed, providing you with the perfect place to unwind after a long day of exploring the city. The room is equipped with modern amenities, including a flat-screen TV, mini-fridge, and a private bathroom with a shower. Enjoy a relaxing stay with all the essentials you need."
+  },
+  {
+    "name": "Superior Palace Suite",
+    "images": [
+      "https://i.ibb.co/CKG26YN/room2-1.jpg",
+      "https://i.ibb.co/PCdTvWQ/room1-3.jpg",
+      "https://i.ibb.co/0jY6r72/room2-3.jpg"
+    ],
+    "price_per_night": 150,
+    "room_size": "2 Queen Beds",
+    "room_description": "San Domenico Palace, Taormina, A Four Seasons Hotel is a unique hotel, with terraces overlooking Mount Etna and the Bay of Taormina. It features a fitness center, a beauty corner, and an outdoor swimming pool.This luxury hotel in Taormina consists of 2 historic buildings. The Garden Wing is a former 15th-century convent with cloister. The Grand Hotel Wing was added in 1896. All rooms are uniquely decorated, and equipped with air conditioning and TV with satellite channels. Most rooms offer views of the sea, and some also have a private balcony. Mentioned in the most famous food guides, the restaurants and bars of the hotel serve traditional Sicilian cuisine. Breakfast buffet is served at the restaurant and includes local pastries."
+  },
+  {
+    "name": "Executive Suite",
+    "images": [
+      "https://i.ibb.co/g7T1gjG/room3-1.jpg",
+      "https://i.ibb.co/f8yrLH7/room3-2.jpg",
+      "https://i.ibb.co/XJT0G0K/room1-2.jpg"
+    ],
+    "price_per_night": 250,
+    "room_size": "1 King Bed and 1 Sofa Bed",
+    "room_description": "Experience the height of luxury in our Executive Suite. This spacious suite features a king-size bed and a separate living area with a sofa bed, making it perfect for business travelers or those seeking extra space. The suite is equipped with a large flat-screen TV, a work desk, a mini-kitchenette, and a private bathroom with a spa tub. Enjoy a truly indulgent stay in this exclusive suite."
+  },
+  {
+    "name": "Standard Twin Room",
+    "images": [
+      "https://i.ibb.co/sCv6zGy/room4-1.jpg",
+      "https://i.ibb.co/zJWj8GY/room4-2.jpg",
+      "https://i.ibb.co/M8xzdx8/room4-3.jpg"
+    ],
+    "price_per_night": 90,
+    "room_size": "2 Twin Beds",
+    "room_description": "Our Standard Twin Room is a cozy and practical choice for travelers on a budget. The room features two twin beds and basic amenities, including a TV and a private bathroom with a shower. It's a comfortable and affordable option for friends or family members traveling together."
+  },
+  {
+    "name": "Family Suite",
+    "images": [
+      "https://i.ibb.co/8DhZs08/room5-1.jpg",
+      "https://i.ibb.co/M8xzdx8/room4-3.jpg",
+      "https://i.ibb.co/CKG26YN/room2-1.jpg"
+    ],
+    "price_per_night": 300,
+    "room_size": "2 King Beds and 1 Bunk Bed",
+    "room_description": "Our Family Suite is perfect for larger groups or families looking for a spacious and accommodating space. The suite includes two king-size beds and a bunk bed, ensuring everyone has their own comfortable sleeping area. The room features a separate living area, multiple TVs, a mini-kitchenette, and a private bathroom with a bathtub. Enjoy a memorable family vacation in this expansive suite."
+  },
+  {
+    "name": "Ocean View Room",
+    "images": [
+      "https://i.ibb.co/YkdSx9v/room6-1.jpg",
+      "https://i.ibb.co/nmDLWTC/room6-2.jpg",
+      "https://i.ibb.co/x1vp2Tm/room6-3.jpg"
+    ],
+    "price_per_night": 180,
+    "room_size": "1 King Bed",
+    "room_description": "Our Ocean View Room offers stunning vistas of the sea. Wake up to the sound of waves crashing and enjoy a panoramic view of the ocean from your private balcony. The room features a comfortable king-size bed, a sitting area, a flat-screen TV, and a modern bathroom with a spacious shower. This room is perfect for couples seeking a romantic getaway."
+  },
+  {
+    "name": "Deluxe King Suite",
+    "images": [
+      "https://i.ibb.co/QjVKJj1/room7-1.jpg",
+      "https://i.ibb.co/wz4KJMm/room7-2.jpg",
+      "https://i.ibb.co/L5mbDB3/room7-3.jpg"
+    ],
+    "price_per_night": 220,
+    "room_size": "1 King Bed and 1 Queen Bed",
+    "room_description": "Indulge in luxury in our Deluxe King Suite, which features a king-size bed and a separate area with a queen-size bed. This spacious suite offers a stylish and comfortable setting, complete with a living area, two flat-screen TVs, a mini-kitchenette, and a spa-like bathroom with a bathtub. Experience the ultimate in relaxation and comfort during your stay."
+  },
+  {
+    "name": "Classic Single Room",
+    "images": [
+      "https://i.ibb.co/JthRQ4b/room8-1.jpg",
+      "https://i.ibb.co/Svwq61j/room8-2.jpg",
+      "https://i.ibb.co/Htd9vLv/room8-3.jpg"
+    ],
+    "price_per_night": 80,
+    "room_size": "1 Twin Bed",
+    "room_description": "The Classic Single Room is a charming option for solo travelers. The room features a cozy twin bed, a small desk, and a private bathroom with a shower. It's an excellent choice for those looking for simplicity and affordability during their stay."
+  },
+  {
+    "name": "Garden View Suite",
+    "images": [
+      "https://i.ibb.co/zXGYsmC/room9-1.jpg",
+      "https://i.ibb.co/L16pPRc/room9-2.jpg",
+      "https://i.ibb.co/1dmy27G/room9-3.jpg"
+    ],
+    "price_per_night": 200,
+    "room_size": "1 King Bed and 1 Sofa Bed",
+    "room_description": "Our Garden View Suite offers a tranquil retreat with a view of our lush gardens. The suite features a comfortable king-size bed and a sofa bed in a separate living area. It comes equipped with a flat-screen TV, a mini-kitchenette, and a private bathroom with a bathtub. Relax in the peaceful surroundings and enjoy the beauty of nature."
+  },
+  {
+    "name": "Luxury Penthouse Suite",
+    "images": [
+      "https://i.ibb.co/48sp7yg/room10-1.jpg",
+      "https://i.ibb.co/vmGT0tw/room10-2.jpg",
+      "https://i.ibb.co/yPbtJWb/room10-3.jpg"
+    ],
+    "price_per_night": 400,
+    "room_size": "2 King Beds, 1 Queen Bed, and 1 Sofa Bed",
+    "room_description": "Indulge in opulence with our Luxury Penthouse Suite. This spacious and luxurious suite offers two king-size beds, a queen-size bed, and a sofa bed, providing ample space for guests. The suite includes a grand living area, a dining room, multiple flat-screen TVs, a fully equipped kitchen, and a lavish bathroom with a whirlpool tub. Experience the epitome of luxury during your stay."
+  }
+]
