@@ -9,6 +9,9 @@ import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
 import Error from "../pages/Error/Error";
 import RoomDetails from "../pages/RoomDetails/RoomDetails";
+import BookingPage from "../pages/BookingPage/BookingPage";
+import PrivateRoute from "./PrivateRoute";
+import ConfirmBooking from "../pages/BookingPage/ConfirmBooking";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +45,21 @@ const router = createBrowserRouter([
         element: <RoomDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/rooms/${params.id}`),
+      },
+
+      {
+        path: "room/:id/bookingPage",
+        element: (
+          <PrivateRoute>
+            <BookingPage />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/rooms/${params.id}`),
+      },
+      {
+        path: "confirmBooking",
+        element: <ConfirmBooking />,
       },
       {
         path: "login",
