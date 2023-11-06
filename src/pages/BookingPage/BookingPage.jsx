@@ -45,8 +45,12 @@ function BookingPage() {
             autoClose: 5000,
           });
           setTimeout(() => {
-            navigate("/confirmBooking");
+            navigate("/myBookings");
           }, 2000);
+        } else if (data.message === "Room is already booked") {
+          toast.error("Room is already booked", {
+            position: "top-center",
+          });
         }
       });
   };
