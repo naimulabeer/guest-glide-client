@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useDate from "../../hooks/useDate";
 
@@ -45,7 +46,7 @@ function BookingPage() {
             autoClose: 5000,
           });
           setTimeout(() => {
-            navigate("/myBookings");
+            navigate(`/room/${_id}/bookingPage/addReview`);
           }, 2000);
         } else if (data.message === "Room is already booked") {
           toast.error("Room is already booked", {

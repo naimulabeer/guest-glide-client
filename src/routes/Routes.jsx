@@ -11,6 +11,7 @@ import Error from "../pages/Error/Error";
 import RoomDetails from "../pages/RoomDetails/RoomDetails";
 import BookingPage from "../pages/BookingPage/BookingPage";
 import PrivateRoute from "./PrivateRoute";
+import ReviewPage from "../pages/Review/ReviewPage";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,16 @@ const router = createBrowserRouter([
       {
         path: "room/:id",
         element: <RoomDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/rooms/${params.id}`),
+      },
+      {
+        path: "room/:id/bookingPage/addReview",
+        element: (
+          <PrivateRoute>
+            <ReviewPage />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/rooms/${params.id}`),
       },
