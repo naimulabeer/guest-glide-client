@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 
 function PageTitle({ title }) {
   return (
-    <Helmet>
-      <title>{title} - Guest Glide</title>
-    </Helmet>
+    <HelmetProvider>
+      <Helmet>
+        <title>{title} - Guest Glide</title>
+      </Helmet>
+    </HelmetProvider>
   );
 }
 

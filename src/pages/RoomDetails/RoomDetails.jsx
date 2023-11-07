@@ -26,10 +26,9 @@ function RoomDetails() {
             <GoPeople />
             <span className="text-lg">{room_size}</span>
           </div>
-          <p className="text-2xl uppercase">
-            Description
-            <div className="bg-blue-500 w-[118px] h-[2px] mt-2 mb-10"></div>
-          </p>
+          <p className="text-2xl uppercase">Description</p>
+          <div className="bg-blue-500 w-[118px] h-[2px] mb-10"></div>
+
           <p className="text-lg text-slate-700">{room_description}</p>
           <p className="text-lg">Availablity: {available_seats}</p>
         </div>
@@ -46,7 +45,7 @@ function RoomDetails() {
           </Link>
         </div>
       </div>
-      <ShowReviews />
+      <ShowReviews roomsDetails={roomsDetails} />
     </div>
   );
 }
