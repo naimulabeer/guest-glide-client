@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 function About() {
   return (
     <>
+      <PageTitle title="About" />
       <div className="container mx-auto py-8 flex flex-col lg:flex-row items-center justify-center">
         <div className="lg:w-1/2">
           <img

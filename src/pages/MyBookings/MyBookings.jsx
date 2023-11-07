@@ -4,6 +4,9 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import useAxiosSecure from "../../hooks/useAxios";
 import Swal from "sweetalert2";
 import useDate from "../../hooks/useDate";
+import PageTitle from "../../components/PageTitle/PageTitle";
+import { AwesomeButton } from "react-awesome-button";
+import { Link } from "react-router-dom";
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
@@ -86,6 +89,7 @@ const MyBookings = () => {
 
   return (
     <div className="mb-20 mt-10">
+      <PageTitle title="My Bookings" />
       <h2 className="text-5xl text-center uppercase font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-slate-800">
         Your bookings
       </h2>
@@ -114,7 +118,14 @@ const MyBookings = () => {
         </table>
       </div>
       {bookings.length === 0 ? (
-        ""
+        <>
+          <div className="mt-20 flex flex-col items-center gap-4">
+            <h1 className=" text-3xl">You have no Bookings yet</h1>
+            <Link to="/rooms">
+              <AwesomeButton type="secondary">Book Now</AwesomeButton>
+            </Link>
+          </div>
+        </>
       ) : (
         <div className="text-right text-2xl mt-10 px-5 lg:mr-48 md:mr-10 ">
           Bookings Count: {bookings.length}

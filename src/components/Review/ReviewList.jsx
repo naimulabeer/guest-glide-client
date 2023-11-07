@@ -3,7 +3,7 @@ import { Rating } from "@smastrom/react-rating";
 
 function ReviewList({ review }) {
   return (
-    <div className="flex gap-20 w-1/2 px-2 py-2 items-center border border-slate-200">
+    <div className="flex gap-20 mb-10 w-1/2 px-2 py-2 items-center border border-slate-200">
       <figure className="w-12 h-12">
         <img
           className="rounded-full"

@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 function SignUp() {
   const { setUser, createUser, googleSignIn } = useContext(AuthContext);
@@ -95,6 +96,7 @@ function SignUp() {
 
   return (
     <div className="flex h-[120vh] bg-gray-200">
+      <PageTitle title="SignUp" />
       <ToastContainer />
       <div className="m-auto md:w-[500px]">
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

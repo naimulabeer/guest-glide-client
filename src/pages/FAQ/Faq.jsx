@@ -1,3 +1,5 @@
+import PageTitle from "../../components/PageTitle/PageTitle";
+
 function Faq() {
   const faqData = [
     {
@@ -24,6 +26,7 @@ function Faq() {
 
   return (
     <div className="p-6 md:p-12 bg-gray-100">
+      <PageTitle title="FAQ" />
       <div className="mb-10">
         <img src="/faq.jpg" alt="faq" />
       </div>
