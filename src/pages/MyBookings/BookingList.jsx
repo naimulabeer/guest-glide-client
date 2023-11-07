@@ -6,18 +6,17 @@ import useDate from "../../hooks/useDate";
 const BookingList = ({ booking, handleDelete, handleBookingConfirm }) => {
   const { _id, date, roomName, price, img, status } = booking;
   const minDate = useDate();
-  const [updatedDate, setUpdatedDate] = useState(date); // State to hold the updated date
+  const [updatedDate, setUpdatedDate] = useState(date);
   const [bookings, setBookings] = useState([]);
 
-  // Function to handle date input change and send the update to the server
   const handleDateChange = (newDate) => {
-    setUpdatedDate(newDate); // Update the state with the new date
+    setUpdatedDate(newDate);
     fetch(`http://localhost:5000/bookings/${_id}`, {
       method: "PATCH",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ date: newDate }),
+      body: JSON.stringify({ date: newDate, status }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -81,13 +80,13 @@ const BookingList = ({ booking, handleDelete, handleBookingConfirm }) => {
       <td>${price}</td>
       <th>
         {status === "confirm" ? (
-          <span className="font-bold text-primary">Confirmed</span>
+          <span className="font-bold text-blue-600">Confirmed</span>
         ) : (
           <button
             onClick={() => handleBookingConfirm(_id)}
-            className="btn btn-ghost btn-xs"
+            className="btn shadow-[0_9px_0_rgb(0, 0, 0)] hover:shadow-[0_4px_0px_rgb(0,0,0)] text-black bg-emerald-400 ease-out hover:translate-y-1 transition-all rounded "
           >
-            Please Confirm
+            Confirm Booking
           </button>
         )}
       </th>

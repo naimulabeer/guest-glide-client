@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  /* Non-accessible color */
+  color: #110f83;
+  /* color: #af8602; */
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+.header h1::before,
+.header h1::after {
+  content: "";
+  height: 3px;
+  width: 4rem;
+  background-color: #110f83;
+  position: absolute;
+  top: 50%; /* Adjusted to center the lines vertically with text */
+  transform: translateY(
+    -50%
+  ); /* Adjusted to center the lines vertically with text */
+}
+
+.header h1::before {
+  left: -70px;
+}
+
+.header h1::after {
+  right: 10;
+}
+
+@media (max-width: 576px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+  .header h1::before,
+  .header h1::after {
+    display: none;
+  }
+}

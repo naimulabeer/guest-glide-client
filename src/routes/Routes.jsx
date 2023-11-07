@@ -11,7 +11,6 @@ import Error from "../pages/Error/Error";
 import RoomDetails from "../pages/RoomDetails/RoomDetails";
 import BookingPage from "../pages/BookingPage/BookingPage";
 import PrivateRoute from "./PrivateRoute";
-import ConfirmBooking from "../pages/BookingPage/ConfirmBooking";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "myBookings",
-        element: <MyBookings />,
+        element: (
+          <PrivateRoute>
+            <MyBookings />
+          </PrivateRoute>
+        ),
       },
       {
         path: "about",
@@ -56,10 +59,6 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/rooms/${params.id}`),
-      },
-      {
-        path: "confirmBooking",
-        element: <ConfirmBooking />,
       },
       {
         path: "login",

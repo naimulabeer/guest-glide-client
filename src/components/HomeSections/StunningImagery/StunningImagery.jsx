@@ -7,7 +7,9 @@ function StunningImagery() {
       className="aspect-[2]"
     >
       <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="md:text-8xl text-white font-thin">Stunning Imagery!</h1>
+        <h1 className="md:text-5xl border-t-2 border-current border-b-2 text-black uppercase font-medium">
+          Stunning Imagery!
+        </h1>
       </div>
     </ParallaxBanner>
   );
