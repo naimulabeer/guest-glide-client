@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import SwiperImage from "../../components/Swiper/Swiper";
 import { GoPeople } from "react-icons/go";
+import ShowReviews from "../../components/Review/ShowReviews";
 
 function RoomDetails() {
   const roomsDetails = useLoaderData();
@@ -25,8 +26,9 @@ function RoomDetails() {
             <GoPeople />
             <span className="text-lg">{room_size}</span>
           </div>
-          <p className="text-2xl border-b-2  border-b-blue-500 w-fit uppercase">
+          <p className="text-2xl uppercase">
             Description
+            <div className="bg-blue-500 w-[118px] h-[2px] mt-2 mb-10"></div>
           </p>
           <p className="text-lg text-slate-700">{room_description}</p>
           <p className="text-lg">Availablity: {available_seats}</p>
@@ -44,6 +46,7 @@ function RoomDetails() {
           </Link>
         </div>
       </div>
+      <ShowReviews />
     </div>
   );
 }

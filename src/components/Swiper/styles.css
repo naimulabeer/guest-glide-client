@@ -39,3 +39,16 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 576px) {
+  .swiper {
+    width: 80vw;
+    height: 50vh;
+  }
+}
+@media (max-width: 776px) {
+  .swiper {
+    width: 80vw;
+    height: 50vh;
+  }
+}

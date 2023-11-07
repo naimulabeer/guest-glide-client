@@ -25,6 +25,9 @@ function ReviewPage() {
     const comment = form.comment.value;
     const review = {
       reviewerName: userName,
+      reviewerImage: user?.photoURL,
+      reviewerId: _id,
+      roomName: name,
       timeStamp,
       comment,
       rating,
