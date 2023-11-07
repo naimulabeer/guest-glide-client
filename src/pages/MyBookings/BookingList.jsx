@@ -1,41 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
-import useDate from "../../hooks/useDate";
 
 /* eslint-disable react/prop-types */
 const BookingList = ({ booking, handleDelete, handleBookingConfirm }) => {
   const { _id, date, roomName, price, img, status } = booking;
-  const minDate = useDate();
-  const [updatedDate, setUpdatedDate] = useState(date);
-  const [bookings, setBookings] = useState([]);
-
-  const handleDateChange = (newDate) => {
-    setUpdatedDate(newDate);
-    fetch(`http://localhost:5000/bookings/${_id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ date: newDate, status }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) {
-          setBookings((prevBookings) =>
-            prevBookings.map((booking) =>
-              booking._id === _id ? { ...booking, date: newDate } : booking
-            )
-          );
-          console.log(data);
-        }
-      });
-  };
 
   return (
     <tr>
       <th>
         <button
-          onClick={() => handleDelete(_id)}
+          onClick={() => handleDelete(_id, date)}
           className="btn btn-sm btn-circle"
         >
           <svg
@@ -62,20 +35,7 @@ const BookingList = ({ booking, handleDelete, handleBookingConfirm }) => {
         </div>
       </td>
       <td>{roomName}</td>
-      <td>
-        {status === "confirm" ? (
-          date
-        ) : (
-          <input
-            type="date"
-            id="date"
-            name="date"
-            value={updatedDate}
-            min={minDate}
-            onChange={(e) => handleDateChange(e.target.value)}
-          />
-        )}
-      </td>
+      <td>{status === "confirm" ? date : date}</td>
 
       <td>${price}</td>
       <th>

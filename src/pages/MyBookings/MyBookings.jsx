@@ -2,11 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import BookingList from "./BookingList";
 import { AuthContext } from "../../contexts/AuthProvider";
 import useAxiosSecure from "../../hooks/useAxios";
+import Swal from "sweetalert2";
+import useDate from "../../hooks/useDate";
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
   const axiosSecure = useAxiosSecure();
+  const minDate = useDate();
 
   const url = `/bookings?email=${user?.email}`;
 
@@ -14,20 +17,49 @@ const MyBookings = () => {
     axiosSecure.get(url).then((res) => setBookings(res.data));
   }, [url, axiosSecure]);
 
-  const handleDelete = (id) => {
-    const proceed = confirm("Are You sure you want to delete");
-    if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            alert("deleted successful");
-            const remaining = bookings.filter((booking) => booking._id !== id);
-            setBookings(remaining);
-          }
-        });
+  const handleDelete = (id, bookedDate) => {
+    const bookedMoment = new Date(bookedDate);
+    const currentDate = new Date(minDate);
+
+    const cancelDate = new Date(bookedMoment);
+    cancelDate.setDate(cancelDate.getDate() - 1);
+
+    if (currentDate <= cancelDate) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/bookings/${id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deletedCount > 0) {
+                Swal.fire(
+                  "Deleted!",
+                  "Your booking has been deleted.",
+                  "success"
+                );
+                const remaining = bookings.filter(
+                  (booking) => booking._id !== id
+                );
+                setBookings(remaining);
+              }
+            });
+        }
+      });
+    } else {
+      Swal.fire(
+        "Error",
+        "Booking can only be canceled up to 1 day before the booked date.",
+        "error"
+      );
     }
   };
 
