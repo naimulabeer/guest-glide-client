@@ -3,12 +3,15 @@ import { useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { AwesomeButton } from "react-awesome-button";
+import Loader from "../Loading/Loader";
 
 function FilterPrice({ rooms, setFilteredRooms }) {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFilter = () => {
+    setIsLoading(true);
     const filteredRooms = rooms.filter((room) => {
       const roomPrice = room.price_per_night;
       if (
@@ -20,13 +23,20 @@ function FilterPrice({ rooms, setFilteredRooms }) {
       return false;
     });
 
-    setFilteredRooms(filteredRooms);
+    setTimeout(() => {
+      setFilteredRooms(filteredRooms);
+      setIsLoading(false);
+    }, 1000);
   };
 
   const clearFilter = () => {
     setMinPrice("");
     setMaxPrice("");
     setFilteredRooms(rooms);
+    setTimeout(() => {
+      setFilteredRooms(rooms);
+      setIsLoading(false);
+    }, 1000);
   };
 
   return (
@@ -65,12 +75,22 @@ function FilterPrice({ rooms, setFilteredRooms }) {
         />
       </div>
       <div className="flex gap-4">
-        <AwesomeButton type="primary">
-          <button onClick={handleFilter}>Apply</button>
-        </AwesomeButton>
-        <AwesomeButton type="secondary" onPress={clearFilter}>
-          <button onClick={clearFilter}>Clear</button>
-        </AwesomeButton>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            <AwesomeButton type="primary">
+              <button onClick={handleFilter} disabled={isLoading}>
+                Apply
+              </button>
+            </AwesomeButton>
+            <AwesomeButton type="secondary" onPress={clearFilter}>
+              <button disabled={isLoading} onClick={clearFilter}>
+                Clear
+              </button>
+            </AwesomeButton>
+          </>
+        )}
       </div>
     </div>
   );

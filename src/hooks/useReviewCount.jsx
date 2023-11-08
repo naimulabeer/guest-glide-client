@@ -4,7 +4,9 @@ function useReviewCount(roomId) {
   const [reviewCount, setReviewCount] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?reviewerId=${roomId}`)
+    fetch(
+      `https://hotel-booking-server-one.vercel.app/reviews?reviewerId=${roomId}`
+    )
       .then((res) => res.json())
       .then((data) => {
         const count = data.length;

@@ -18,7 +18,7 @@ function RoomsCard({ room }) {
             style={{ width: "350px", height: "200px" }}
           >
             <img
-              className="w-full h-full transition duration-300 ease-in-out hover:scale-110"
+              className="w-full h-full rounded-lg transition duration-300 ease-in-out hover:scale-110"
               src={images[0]}
               alt={name}
             />

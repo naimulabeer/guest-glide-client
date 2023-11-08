@@ -12,7 +12,9 @@ function ShowReviews({ roomsDetails }) {
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      fetch(`http://localhost:5000/reviews?reviewerId=${_id}`)
+      fetch(
+        `https://hotel-booking-server-one.vercel.app/reviews?reviewerId=${_id}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setReviews(data);

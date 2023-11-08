@@ -32,9 +32,8 @@ function ReviewPage() {
       comment,
       rating,
     };
-    console.log(review);
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://hotel-booking-server-one.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -43,7 +42,6 @@ function ReviewPage() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           toast.success("Added Review", {
             position: "top-center",
@@ -110,9 +108,6 @@ function ReviewPage() {
                 required
               />
 
-              {/* <div className="text-gray-600">
-            {moment(Date.now()).format("MMM D, YYYY h:mm A")}
-          </div> */}
               <AwesomeButton type="primary">Add Review</AwesomeButton>
             </div>
           </div>

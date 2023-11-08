@@ -4,32 +4,25 @@ import { Link } from "react-router-dom";
 
 function RoomGalleries() {
   const rooms = useRooms();
-
-  // Take the first 4 rooms from the list
   const featuredRooms = rooms.slice(0, 4);
 
   return (
     <div className="explore-rooms">
-      <div className="room-cards">
+      <div
+        className="room-cards"
+        data-aos="zoom-in-down"
+        data-aos-duration="1000"
+      >
         {featuredRooms.map((room) => (
           <Link to={`/room/${room._id}`} key={room._id} className="room-card">
-            <div
-              data-aos="flip-left"
-              data-aos-easing="ease-out-cubic"
-              data-aos-duration="2000"
-            >
-              <img
-                src={room.images[0]}
-                alt={room.name}
-                className="room-image"
-              />
-              <div className="room-details">
-                <h3 className="room-name">{room.name}</h3>
-                <p className="room-description">{room.description}</p>
-                <p className="room-price">
-                  Price per night: ${room.price_per_night}
-                </p>
-              </div>
+            <img src={room.images[0]} alt={room.name} className="room-image" />
+
+            <div className="room-details">
+              <h3 className="room-name">{room.name}</h3>
+              <p className="room-description">{room.description}</p>
+              <p className="room-price">
+                Price per night: ${room.price_per_night}
+              </p>
             </div>
           </Link>
         ))}

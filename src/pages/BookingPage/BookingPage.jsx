@@ -36,9 +36,8 @@ function BookingPage() {
       price: price_per_night,
       description: room_description,
     };
-    console.log(booking);
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://hotel-booking-server-one.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,7 +46,6 @@ function BookingPage() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           toast.success("Room Booked Successfully", {
             position: "top-center",

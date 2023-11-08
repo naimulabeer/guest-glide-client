@@ -27,7 +27,7 @@ function Footer() {
             feedback through reviews. Our hotel management application offers a
             seamless booking experience, allowing you to reserve the perfect
             room for your stay with ease. Our wide range of accommodations
-            ensures you will find a room that suits your needs, whether you're
+            ensures you will find a room that suits your needs, whether you are
             traveling for business or leisure.
           </p>
         </aside>

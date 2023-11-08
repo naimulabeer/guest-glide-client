@@ -4,7 +4,7 @@ function useBookings() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/bookings")
+    fetch("https://hotel-booking-server-one.vercel.app/bookings")
       .then((res) => res.json())
       .then((data) => setBookings(data));
   }, []);

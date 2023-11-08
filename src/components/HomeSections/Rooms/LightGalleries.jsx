@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
@@ -7,7 +8,6 @@ import LightGallery from "lightgallery/react";
 function LightGalleries() {
   const onBeforeSlide = (detail) => {
     const { index, prevIndex } = detail;
-    console.log(index, prevIndex);
   };
   return (
     <>
@@ -16,7 +16,7 @@ function LightGalleries() {
           Gallery
         </h1>
       </div>
-      <div data-aos="flip-up">
+      <div data-aos="zoom-in-up">
         <LightGallery
           elementClassNames="rooms-class"
           onBeforeSlide={onBeforeSlide}

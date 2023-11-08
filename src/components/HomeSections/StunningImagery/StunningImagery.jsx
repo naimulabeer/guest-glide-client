@@ -1,6 +1,5 @@
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
-import CoreStyles from "react-awesome-slider/src/core";
 import AnimationStyles from "react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss";
 import { AwesomeButton } from "react-awesome-button";
 import "./stunningImagery.styles.css";
@@ -12,11 +11,11 @@ function StunningImagery() {
   return (
     <>
       <AutoplaySlider
-        play={false}
+        play={true}
         cancelOnInteraction={false}
-        interval={2000}
+        interval={3000}
         animation="foldOutAnimation"
-        cssModule={[AnimationStyles, CoreStyles]}
+        cssModule={[AnimationStyles]}
         media={[
           {
             source: "/imagery1.jpg",

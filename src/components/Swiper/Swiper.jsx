@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-// import Swiper core and required modules
+
 import {
   Navigation,
   Pagination,
@@ -11,7 +11,6 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -23,7 +22,6 @@ const SwiperImage = ({ images }) => {
   return (
     <>
       <Swiper
-        // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Thumbs]}
         spaceBetween={10}
         navigation

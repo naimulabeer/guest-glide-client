@@ -38,7 +38,7 @@ const MyBookings = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/bookings/${id}`, {
+          fetch(`https://hotel-booking-server-one.vercel.app/bookings/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -67,7 +67,7 @@ const MyBookings = () => {
   };
 
   const handleBookingConfirm = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://hotel-booking-server-one.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -76,7 +76,6 @@ const MyBookings = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           const remaining = bookings.filter((booking) => booking._id !== id);
           const updated = bookings.find((booking) => booking._id === id);
