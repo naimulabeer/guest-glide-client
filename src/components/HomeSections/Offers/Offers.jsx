@@ -1,6 +1,6 @@
 function Offers() {
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-blue-700 p-8 text-white mt-10">
+    <div className="bg-gradient-to-r from-blue-500 to-blue-700 p-8 text-white mt-20">
       <div className="max-w-screen-xl mx-auto">
         <div className="flex flex-col items-center">
           <h2 className="text-3xl font-extrabold mb-4">Special Offers</h2>
