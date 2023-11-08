@@ -65,11 +65,11 @@ function FilterPrice({ rooms, setFilteredRooms }) {
         />
       </div>
       <div className="flex gap-4">
-        <AwesomeButton type="primary" onPress={handleFilter}>
-          Apply
+        <AwesomeButton type="primary">
+          <button onClick={handleFilter}>Apply</button>
         </AwesomeButton>
         <AwesomeButton type="secondary" onPress={clearFilter}>
-          Clear
+          <button onClick={clearFilter}>Clear</button>
         </AwesomeButton>
       </div>
     </div>
