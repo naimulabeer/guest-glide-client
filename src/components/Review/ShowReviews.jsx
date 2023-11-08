@@ -2,17 +2,23 @@
 
 import { useState, useEffect } from "react";
 import ReviewList from "./ReviewList";
+import Loader from "../Loading/Loader";
 
 function ShowReviews({ roomsDetails }) {
+  const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
   const { _id } = roomsDetails;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?reviewerId=${_id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setReviews(data);
-      });
+    setLoading(true);
+    setTimeout(() => {
+      fetch(`http://localhost:5000/reviews?reviewerId=${_id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setReviews(data);
+          setLoading(false);
+        });
+    }, 1000);
   }, [_id]);
 
   return (
@@ -23,9 +29,15 @@ function ShowReviews({ roomsDetails }) {
         <p className="text-lg mb-10">See all the other reviews...</p>
 
         <ul>
-          {reviews.map((review) => (
-            <ReviewList review={review} key={review._id} />
-          ))}
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              {reviews.map((review) => (
+                <ReviewList review={review} key={review._id} />
+              ))}
+            </>
+          )}
         </ul>
       </div>
     </>

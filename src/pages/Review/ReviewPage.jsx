@@ -51,7 +51,7 @@ function ReviewPage() {
           });
           setTimeout(() => {
             navigate("/myBookings");
-          }, 3000);
+          }, 1000);
         }
       });
   };

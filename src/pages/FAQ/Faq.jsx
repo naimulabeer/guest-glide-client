@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import PageTitle from "../../components/PageTitle/PageTitle";
+import Loader from "../../components/Loading/Loader";
 
 function Faq() {
   const faqData = [
@@ -24,28 +26,42 @@ function Faq() {
     },
   ];
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
   return (
     <div className="p-6 md:p-12 bg-gray-100">
       <PageTitle title="FAQ" />
-      <div className="mb-10">
-        <img src="/faq.jpg" alt="faq" />
-      </div>
-
-      <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-teal-600 mb-6">
-          Frequently Asked Questions
-        </h1>
-      </div>
-      <div className="max-w-2xl mx-auto">
-        {faqData.map((faq, index) => (
-          <div key={index} className="mb-6 border-b-2 border-gray-300">
-            <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
-              {faq.question}
-            </h2>
-            <p className="text-gray-600">{faq.answer}</p>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <div className="mb-10">
+            <img src="/faq.jpg" alt="faq" />
           </div>
-        ))}
-      </div>
+
+          <div className="max-w-2xl mx-auto text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-teal-600 mb-6">
+              Frequently Asked Questions
+            </h1>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            {faqData.map((faq, index) => (
+              <div key={index} className="mb-6 border-b-2 border-gray-300">
+                <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
+                  {faq.question}
+                </h2>
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
