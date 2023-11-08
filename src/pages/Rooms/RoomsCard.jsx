@@ -12,7 +12,8 @@ function RoomsCard({ room }) {
     <div>
       <div className="flex flex-col gap-5">
         <Link to={`/room/${_id}`}>
-          <figure
+          <div
+            data-aos="zoom-in"
             className="relative overflow-hidden bg-cover bg-no-repeat"
             style={{ width: "350px", height: "200px" }}
           >
@@ -21,7 +22,7 @@ function RoomsCard({ room }) {
               src={images[0]}
               alt={name}
             />
-          </figure>
+          </div>
         </Link>
 
         <div className="">

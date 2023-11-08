@@ -16,39 +16,41 @@ function LightGalleries() {
           Gallery
         </h1>
       </div>
-      <LightGallery
-        elementClassNames="rooms-class"
-        onBeforeSlide={onBeforeSlide}
-      >
-        <a href="background1.jpg">
-          <img
-            alt="background1"
-            src="background1.jpg"
-            className="border rounded w-full h-64"
-          />
-        </a>
-        <a href="background2.jpg">
-          <img
-            alt="background2"
-            src="background2.jpg"
-            className="border rounded w-full h-64"
-          />
-        </a>
-        <a href="background3.jpg">
-          <img
-            alt="background3"
-            src="background3.jpg"
-            className="border rounded w-full h-64"
-          />
-        </a>
-        <a href="background4.jpg">
-          <img
-            alt="background4"
-            src="background4.jpg"
-            className="border rounded w-full h-64"
-          />
-        </a>
-      </LightGallery>
+      <div data-aos="flip-up">
+        <LightGallery
+          elementClassNames="rooms-class"
+          onBeforeSlide={onBeforeSlide}
+        >
+          <a href="background1.jpg">
+            <img
+              alt="background1"
+              src="background1.jpg"
+              className="border rounded w-full h-64"
+            />
+          </a>
+          <a href="background2.jpg">
+            <img
+              alt="background2"
+              src="background2.jpg"
+              className="border rounded w-full h-64"
+            />
+          </a>
+          <a href="background3.jpg">
+            <img
+              alt="background3"
+              src="background3.jpg"
+              className="border rounded w-full h-64"
+            />
+          </a>
+          <a href="background4.jpg">
+            <img
+              alt="background4"
+              src="background4.jpg"
+              className="border rounded w-full h-64"
+            />
+          </a>
+        </LightGallery>
+      </div>
     </>
   );
 }

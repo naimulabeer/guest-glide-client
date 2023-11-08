@@ -13,13 +13,23 @@ function RoomGalleries() {
       <div className="room-cards">
         {featuredRooms.map((room) => (
           <Link to={`/room/${room._id}`} key={room._id} className="room-card">
-            <img src={room.images[0]} alt={room.name} className="room-image" />
-            <div className="room-details">
-              <h3 className="room-name">{room.name}</h3>
-              <p className="room-description">{room.description}</p>
-              <p className="room-price">
-                Price per night: ${room.price_per_night}
-              </p>
+            <div
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
+              <img
+                src={room.images[0]}
+                alt={room.name}
+                className="room-image"
+              />
+              <div className="room-details">
+                <h3 className="room-name">{room.name}</h3>
+                <p className="room-description">{room.description}</p>
+                <p className="room-price">
+                  Price per night: ${room.price_per_night}
+                </p>
+              </div>
             </div>
           </Link>
         ))}

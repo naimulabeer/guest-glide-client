@@ -24,6 +24,9 @@ function RoomDetails() {
     room_description,
     available_seats,
   } = roomsDetails;
+
+  const isRoomAvailable = available_seats > 0;
+
   return (
     <div className="mt-10 mb-10">
       {loading ? (
@@ -51,9 +54,14 @@ function RoomDetails() {
               </span>
               <Link
                 to={`/room/${_id}/bookingPage`}
-                className=" lg:w-4/5 w-1/2 px-6 text-center py-2 font-bold uppercase border bg-amber-400 hover:bg-emerald-500"
+                className={`lg:w-4/5 w-1/2 px-6 text-center py-2 font-bold uppercase border ${
+                  isRoomAvailable
+                    ? "bg-amber-400 hover:bg-emerald-500"
+                    : "bg-gray-400 cursor-not-allowed"
+                }`}
+                disabled={!isRoomAvailable}
               >
-                Book This Room
+                {isRoomAvailable ? "Book This Room" : "Room Unavailable"}
               </Link>
             </div>
           </div>

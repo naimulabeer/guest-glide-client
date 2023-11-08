@@ -93,6 +93,7 @@ function ReviewPage() {
                     style={{ maxWidth: 100 }}
                     value={rating}
                     onChange={(value) => setRating(value)}
+                    isRequired={true}
                   />
                 </div>
               </div>
@@ -106,6 +107,7 @@ function ReviewPage() {
                 placeholder="Write your review here..."
                 minRows={5}
                 style={{ width: 350 }}
+                required
               />
 
               {/* <div className="text-gray-600">
