@@ -1,5 +1,3 @@
-# b8a11-client-side-naimulabeer
-
 # Guest Glide - Hotel Management Web Application
 
 ## Live Link:
