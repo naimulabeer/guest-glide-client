@@ -26,6 +26,9 @@ function StunningImagery() {
           {
             source: "/imagery3.jpg",
           },
+          {
+            source: "/imagery4.jpg",
+          },
         ]}
       />
       <div className="absolute md:top-40 inset-0 md:right-10 flex flex-col gap-4 items-center justify-center">
